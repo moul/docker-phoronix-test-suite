@@ -2,4 +2,4 @@ install:
   - curl -sLo - http://j.mp/install-travis-docker | sh -xe
 
 script:
-  - ./run 'docker build -t moul/phoronix-test-suite . && docker run moul/phoronix-test-suite echo Build succeed'
+  - ./run 'docker build -t moul/phoronix-test-suite . && docker run --entrypoint=bash moul/phoronix-test-suite -ec "echo Build succeed"'
